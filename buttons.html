@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Farrey Shop</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme change */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+        .button-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .button-container a {
+            text-decoration: none;
+        }
+        .button {
+            padding: 15px 25px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s ease;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .dark-mode .button {
+            background-color: #646464;
+        }
+        .dark-mode .button:hover {
+            background-color: #454545;
+        }
+        .btn-iframe {
+            width: 100%;
+            height: calc(150vh - 180px); /* Adjusted to leave space for title, buttons, and margins */
+            border: none;
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button-container">
+            <button class="button" onclick="loadPdf()">IoT Record</button>
+            <button class="button" onclick="loadTinkercad_Programs()">Tinkercad Programs</button>
+        </div>
+        <iframe src="" class="btn-iframe" frameborder="0"></iframe>
+    </div>
+
+    <script>
+        function loadPdf() {
+            document.querySelector('.btn-iframe').src = 'IoT_Record.pdf';
+        }
+        
+        function loadTinkercad_Programs() {
+            document.querySelector('.btn-iframe').src = 'TinkercadProgramLinks.pdf';
+        }
+
+        // Load the saved theme from localStorage
+        window.addEventListener('load', () => {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        });
+
+        // Listen for messages from the parent window (index.html)
+        window.addEventListener('message', function(event) {
+            if (event.data.darkMode) {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+    </script>
+</body>
+</html>

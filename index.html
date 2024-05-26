@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Farrey Shop</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Prevents horizontal scrollbar */
+            position: relative;
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme change */
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the content */
+            padding: 20px;
+            background-color: #fff; /* Set background color for the header */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better contrast */
+            text-align: center; /* Center align the content */
+            position: relative; /* Set position to relative for absolute positioning of the logo */
+            height: 100px; /* Set a fixed height for the header */
+            transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme change */
+        }
+        .logo {
+            position: absolute; /* Position the logo absolutely within the header */
+            top: 50%;
+            left: 20px; /* Adjust the left position as needed */
+            width: 100px; /* Adjust width as needed */
+            height: auto;
+            border-radius: 10px;
+            cursor: pointer;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+            transform: translateY(-50%); /* Center the logo vertically */
+        }
+        .name {
+            margin: 0;
+            font-size: 36px; /* Increased font size */
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
+            cursor: pointer;
+            animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+        }
+        iframe {
+            width: 100%; /* Full width */
+            height: calc(100vh - 100px); /* Adjusted to leave space for title and button */
+            border: none;
+            display: block;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            animation: slideIn 1s ease-in-out; /* Slide-in animation */
+        }
+        .dark-mode {
+            background-color: #333;
+            color: #f4f4f4;
+        }
+        .dark-mode .header {
+            background-color: #444;
+            color: #f4f4f4;
+        }
+        .dark-mode .name {
+            color: #f4f4f4;
+        }
+        .toggle-switch {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+        }
+        .toggle-switch input {
+            display: none;
+        }
+        .toggle-switch label {
+            background-color: #ccc;
+            border-radius: 20px;
+            cursor: pointer;
+            display: inline-block;
+            height: 24px;
+            margin: 0;
+            position: relative;
+            width: 48px;
+        }
+        .toggle-switch label::after {
+            background-color: #fff;
+            border-radius: 50%;
+            content: '\2600'; /* Unicode for sun */
+            height: 20px;
+            left: 2px;
+            position: absolute;
+            top: 2px;
+            width: 20px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+        }
+        .toggle-switch input:checked + label {
+            background-color: #007BFF;
+        }
+        .toggle-switch input:checked + label::after {
+            transform: translateX(24px);
+            content: '\1F319'; /* Unicode for moon */
+        }
+        /* Keyframes for animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="TFS.png" alt="Logo" class="logo" onclick="goToMainPage()">
+        <h1 class="name" onclick="goToMainPage()">The Farrey Shop</h1>
+        <div class="toggle-switch">
+            <input type="checkbox" id="theme-toggle" onchange="toggleTheme()">
+            <label for="theme-toggle"></label>
+        </div>
+    </div>
+    <iframe src="buttons.html" frameborder="0"></iframe>
+
+    <script>
+        function goToMainPage() {
+            window.location.href = "index.html";
+        }
+
+        function toggleTheme() {
+            const isDarkMode = document.getElementById('theme-toggle').checked;
+            document.body.classList.toggle('dark-mode', isDarkMode);
+            // Send message to buttons.html to change its theme
+            const iframe = document.querySelector('iframe');
+            if (iframe) {
+                iframe.contentWindow.postMessage({ darkMode: isDarkMode }, '*');
+            }
+            localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
+        }
+
+        // Load the saved theme from localStorage
+        window.addEventListener('load', () => {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'dark') {
+                document.getElementById('theme-toggle').checked = true;
+                toggleTheme(); // Call toggleTheme to apply dark mode
+            }
+        });
+    </script>
+</body>
+</html>
