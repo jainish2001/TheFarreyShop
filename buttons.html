@@ -63,6 +63,7 @@
         <div class="button-container">
             <button class="button" onclick="loadPdf()">IoT Record</button>
             <button class="button" onclick="loadTinkercad_Programs()">Tinkercad Programs</button>
+            <button class="button" onclick="loadFarrey()">Farrey Shop Special</button>
         </div>
         <iframe src="" class="btn-iframe" frameborder="0"></iframe>
     </div>
@@ -74,6 +75,10 @@
         
         function loadTinkercad_Programs() {
             document.querySelector('.btn-iframe').src = 'TinkercadProgramLinks.pdf';
+        }
+
+        function loadFarrey() {
+            document.querySelector('.btn-iframe').src = 'IotLabFarrey.pdf';
         }
 
         // Load the saved theme from localStorage
