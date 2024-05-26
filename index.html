@@ -18,25 +18,29 @@
         .header {
             display: flex;
             align-items: center;
-            justify-content: space-between; /* Distribute content horizontally */
+            justify-content: center; /* Center align the content */
             padding: 20px;
             background-color: #fff; /* Set background color for the header */
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for better contrast */
             text-align: center; /* Center align the content */
             position: relative; /* Set position to relative for absolute positioning of the logo */
-            height: auto; /* Set height to auto for responsiveness */
+            height: 100px; /* Set a fixed height for the header */
             transition: background-color 0.5s, color 0.5s; /* Smooth transition for theme change */
         }
         .logo {
-            width: 80px; /* Adjust width for smaller screens */
+            position: absolute; /* Position the logo absolutely within the header */
+            top: 50%;
+            left: 20px; /* Adjust the left position as needed */
+            width: 100px; /* Adjust width as needed */
             height: auto;
             border-radius: 10px;
             cursor: pointer;
             animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+            transform: translateY(-50%); /* Center the logo vertically */
         }
         .name {
             margin: 0;
-            font-size: 24px; /* Decreased font size for smaller screens */
+            font-size: 36px; /* Increased font size */
             color: #333;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Add text shadow */
             cursor: pointer;
@@ -44,7 +48,7 @@
         }
         iframe {
             width: 100%; /* Full width */
-            height: calc(100vh - 140px); /* Adjusted to leave space for title and button */
+            height: calc(100vh - 100px); /* Adjusted to leave space for title and button */
             border: none;
             display: block;
             margin: 0;
@@ -64,11 +68,11 @@
             color: #f4f4f4;
         }
         .toggle-switch {
-            display: flex;
-            align-items: center;
             position: absolute;
             top: 20px;
             right: 20px;
+            display: flex;
+            align-items: center;
         }
         .toggle-switch input {
             display: none;
@@ -120,28 +124,6 @@
             }
             to {
                 transform: translateY(0);
-            }
-        }
-
-        /* Responsive adjustments */
-        @media screen and (max-width: 768px) {
-            .header {
-                flex-direction: column; /* Stack items vertically */
-                height: auto;
-                padding: 10px;
-            }
-            .logo {
-                width: 60px;
-            }
-            .name {
-                font-size: 20px;
-            }
-            iframe {
-                height: calc(100vh - 100px);
-            }
-            .toggle-switch {
-                top: 10px;
-                right: 10px;
             }
         }
     </style>
