@@ -61,24 +61,27 @@
 <body>
     <div class="container">
         <div class="button-container">
-            <button class="button" onclick="loadPdf()">IoT Record</button>
-            <button class="button" onclick="loadTinkercad_Programs()">Tinkercad Programs</button>
-            <button class="button" onclick="loadFarrey()">Farrey Shop Special</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program1.a.pdf')">Program 1 A</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program1.b.pdf')">Program 1 B</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program3.pdf')">Program 3</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program4.pdf')">Program 4</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program6.pdf')">Program 6</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program7.pdf')">Program 7</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program8.pdf')">Program 8</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program9.pdf')">Program 9</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program10.pdf')">Program 10</button>
+            <button class="button" onclick="loadFarrey()">Farrey Shop Special</button>        
         </div>
         <iframe src="" class="btn-iframe" frameborder="0"></iframe>
     </div>
 
     <script>
-        function loadPdf() {
-            document.querySelector('.btn-iframe').src = 'IoT_Record.pdf';
-        }
-        
-        function loadTinkercad_Programs() {
-            document.querySelector('.btn-iframe').src = 'TinkercadProgramLinks.pdf';
+        function loadFarrey() {
+            document.querySelector('.btn-iframe').src = 'assets/CC_Lab/CCLabFarrey.pdf';
         }
 
-        function loadFarrey() {
-            document.querySelector('.btn-iframe').src = 'IotLabFarrey.pdf';
+        function loadProgram(programUrl) {
+            document.querySelector('.btn-iframe').src = programUrl;
         }
 
         // Load the saved theme from localStorage
