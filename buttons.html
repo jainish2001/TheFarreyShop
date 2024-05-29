@@ -61,16 +61,25 @@
 <body>
     <div class="container">
         <div class="button-container">
+            <!-- Farrey Shop Special -->
+            <button class="button" onclick="loadFarrey()">CC Special</button>
+            <!-- Buttons for pdf -->
+            <button class="button" onclick="loadProgram('assets/CC_Lab/CCLabManual.pdf')">CC Lab Manual</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program1.a.pdf')">Program 1 A</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program1.b.pdf')">Program 1 B</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program2.pdf')">Program 2</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program3.pdf')">Program 3</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program4.pdf')">Program 4</button>
+            <button class="button" onclick="loadProgram('assets/CC_Lab/program5.pdf')">Program 5</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program6.pdf')">Program 6</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program7.pdf')">Program 7</button>
             <button class="button" onclick="loadProgram('assets/CC_Lab/program8.pdf')">Program 8</button>
-            <button class="button" onclick="loadProgram('assets/CC_Lab/program9.pdf')">Program 9</button>
-            <button class="button" onclick="loadProgram('assets/CC_Lab/program10.pdf')">Program 10</button>
-            <button class="button" onclick="loadFarrey()">Farrey Shop Special</button>        
+            <!-- Buttons for videos -->
+            <button class="button" onclick="openGoogleDriveVideo('1SMNIOsJHP1Tci-GvLj7lpro94DUKMiBn')">Program 3 Video</button>
+            <button class="button" onclick="openGoogleDriveVideo('1jkYjtMRy68w2g8xE8m2rTqHgFwkDj2DJ')">Program 3.2 Video</button>
+            <button class="button" onclick="openGoogleDriveVideo('1GbFbHcG-jugVOCOocZfAs8JSWhR-OgB1')">Program 6 Video</button>
+            <button class="button" onclick="openGoogleDriveVideo('1Wu1i_ltoZVfML0ZwwE563q6NM0ZcZdQ_')">Program 5 Video</button>
+            <button class="button" onclick="openGoogleDriveVideo('1LzOeTUnYGDxpsguGcYaKknPBYl2oa_cL')">Program 6 Video</button>
         </div>
         <iframe src="" class="btn-iframe" frameborder="0"></iframe>
     </div>
@@ -82,6 +91,16 @@
 
         function loadProgram(programUrl) {
             document.querySelector('.btn-iframe').src = programUrl;
+        }
+
+        // Function to load videos
+        function loadVideo(videoUrl) {
+            document.querySelector('.btn-iframe').src = videoUrl;
+        }
+
+        function openGoogleDriveVideo(fileId) {
+            var videoUrl = 'https://drive.google.com/file/d/' + fileId + '/view';
+            window.open(videoUrl, '_blank');
         }
 
         // Load the saved theme from localStorage
