@@ -1,42 +1,47 @@
-# TheFarreyShop
+# Welcome to The Farrey Shop! 😎
 
-<h2>Table of Contents</h2>
-<ul>
-  <li><a href="#project-overview">Project Overview</a></li>
-  <li><a href="#features">Features</a></li>
-  <li><a href="#technologies-used">Technologies Used</a></li>
-  <li><a href="#how-it-works">How It Works</a></li>
-  <li><a href="#contributions">Contributions</a></li>
-</ul>
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [How It Works](#how-it-works)
+- [Contributions](#contributions)
 
-<h2 id="project-overview">Project Overview</h2>
-<i>Welcome to The Farrey Shop! This project is a web application designed to assist students with various theory and lab exams by providing easy access to relevant resources. The main features include:</i>
-<h3>Dark Mode Toggle</h3>
-A convenient switch to toggle between light and dark themes for a better user experience. The theme preference is saved using localStorage, ensuring a consistent experience across sessions.
-<h3>Dynamic Button Links</h3>
-The website includes buttons that link to different theory and lab exam resources. These links can be updated as per the requirements of different exams, making it a versatile tool for academic support.
+## Project Overview
+*Welcome to The Farrey Shop!* This web application assists students by providing easy access to various exam resources. Key features include:
 
-<h2 id="features">Features</h2>
-<h3>Responsive Design</h3>
-The layout adjusts smoothly across different screen sizes, ensuring accessibility on both desktop and mobile devices.
-<h3>Smooth Transitions</h3>
-Aesthetic transitions for theme changes and animations enhance the overall user experience.
-<h3>LocalStorage Integration</h3>
+### Dark Mode Toggle
+A switch to toggle between light and dark themes. The user's theme preference is saved using `localStorage`, ensuring consistency across sessions.
+
+### Dynamic Button Links
+Buttons link to different theory and lab exam resources. Links can be updated based on exam requirements, making it a versatile academic tool.
+
+## Features
+### Responsive Design
+The layout adapts to different screen sizes, ensuring accessibility on both desktop and mobile devices.
+
+### Smooth Transitions
+Aesthetic transitions for theme changes and animations enhance the user experience.
+
+### LocalStorage Integration
 The selected theme (light or dark) is remembered across sessions, providing a personalized experience.
 
-<h2 id="technologies-used">Technologies Used</h2>
-<ul>
-  <li>HTML</li>
-  <li>CSS</li>
-  <li>JavaScript</li>
-</ul>
+## Technologies Used
+- HTML
+- CSS
+- JavaScript
 
-<h2 id="how-it-works">How It Works</h2>
-<h3>Dark Mode Toggle</h3>
-Users can switch between light and dark modes using a toggle switch. The choice is saved in the browser's localStorage and applied automatically on page load.
-<h3>Dynamic Resources</h3>
-Buttons on the page link to various resources, including PDFs and videos. These links can be modified to cater to different exams.
-<h3>Cross-Window Communication</h3>
-The main page and the iframe communicate to synchronize the theme across both.
-<hr>
-<i>Feel free to contribute by suggesting new features or improvements. If you encounter any issues, please open an issue on the GitHub repository.</i>
+## How It Works
+### Dark Mode Toggle
+Users can switch between light and dark modes using a toggle switch. The selection is saved in the browser's `localStorage` and applied automatically on page load.
+
+### Dynamic Resources
+Buttons link to various resources, including PDFs and videos. Links can be modified to suit different exams.
+
+### Cross-Window Communication
+The main page and the iframe synchronize the theme to ensure a consistent appearance.
+
+---
+
+*Feel free to contribute by suggesting new features or improvements. If you encounter any issues, please open an issue on the GitHub repository.*
+*[Jainish Jain](https://linktr.ee/jainish2001)*
