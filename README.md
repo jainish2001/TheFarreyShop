@@ -1,5 +1,15 @@
 # TheFarreyShop
 
+<h2>Table of Contents</h2>
+<ul>
+  <li><a href="#project-overview">Project Overview</a></li>
+  <li><a href="#features">Features</a></li>
+  <li><a href="#technologies-used">Technologies Used</a></li>
+  <li><a href="#how-it-works">How It Works</a></li>
+  <li><a href="#getting-started">Getting Started</a></li>
+  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
 <h2>Project Overview</h2>
 <i>Welcome to The Farrey Shop! This project is a web application designed to assist students with various theory and lab exams by providing easy access to relevant resources. The main features include:</i>
 
