@@ -38,5 +38,5 @@ Users can switch between light and dark modes using a toggle switch. The choice 
 Buttons on the page link to various resources, including PDFs and videos. These links can be modified to cater to different exams.
 <h3>Cross-Window Communication</h3>
 The main page and the iframe communicate to synchronize the theme across both.
-
+<br>
 <i>Feel free to contribute by suggesting new features or improvements. If you encounter any issues, please open an issue on the GitHub repository.</i>
