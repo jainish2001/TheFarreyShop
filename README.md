@@ -44,4 +44,4 @@ The main page and the iframe synchronize the theme to ensure a consistent appear
 ---
 
 *Feel free to contribute by suggesting new features or improvements. If you encounter any issues, please open an issue on the GitHub repository.*
-****[Jainish Jain](https://linktr.ee/jainish2001)****
+**[Jainish Jain](https://linktr.ee/jainish2001)**
